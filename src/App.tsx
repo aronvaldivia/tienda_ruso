@@ -154,46 +154,47 @@ function App() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header with Logo */}
-      <header className="bg-green-700 text-white p-4 shadow-md">
+      <header className="bg-black text-white p-4 shadow-md">
         <div className="container mx-auto flex justify-center items-center">
           <div className="flex items-center space-x-2">
-            <Coffee size={32} />
-            <h1 className="text-2xl font-bold">SuperMercado</h1>
+          <img src="https://mcusercontent.com/17635adc15e4488859eb5650d/images/4a6bf879-11dc-a376-64a1-280d56266903.png" 
+                      alt="Pan" className="w-full h-20 object-contian rounded mr-3" />
+          
           </div>
         </div>
       </header>
 
       {/* Promotional Flyer Section */}
-      <div className="bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=1200&h=400')" }}>
-        <div className="bg-gradient-to-r from-green-900/80 to-green-700/60 py-8 md:py-12">
+      <div className="bg-cover bg-center" style={{ backgroundImage: "url('https://mcusercontent.com/17635adc15e4488859eb5650d/images/7ebabe83-6416-8766-bb3e-2d0464998381.jpg')" }}>
+        <div className="bg-gradient-to-r from-red-900/80 to-red-700/60 py-8 md:py-12">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
-              <div className="bg-white/90 backdrop-blur-sm rounded-lg p-6 shadow-lg">
+              <div className="bg-white backdrop-blur-sm rounded-lg p-6 shadow-lg">
                 <div className="inline-block bg-red-600 text-white px-4 py-1 rounded-full mb-3 animate-pulse">
                   <div className="flex items-center">
                     <Percent size={16} className="mr-1" />
-                    <span className="font-bold text-sm">OFERTA ESPECIAL</span>
+                    <span className="font-bold text-3xl">OFERTA ESPECIAL</span>
                   </div>
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-green-800 mb-2">¡Gran Venta de Fin de Semana!</h2>
-                <p className="text-gray-700 mb-4">Aprovecha 30% de descuento en todos los productos de panadería y frutas frescas.</p>
+                <h2 className="text-2xl md:text-3xl font-bold text-black mb-2">¡Gran Venta de Fin de Semana!</h2>
+                <p className="text-gray-700 mb-4">Aprovecha descuento en CERVEZAS!.</p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                  <div className="bg-green-100 p-3 rounded-lg flex items-center">
-                    <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=100&h=100" 
-                      alt="Pan" className="w-16 h-16 object-cover rounded mr-3" />
+                  <div className="bg-black p-3 rounded-lg flex items-center">
+                    <img src="https://mcusercontent.com/17635adc15e4488859eb5650d/images/adb3b576-2a1d-2feb-9a40-5cd93ecdb701.jpg" 
+                      alt="Pan" className="w-full h-40 object-cover rounded mr-3" />
                     <div className="text-left">
-                      <p className="font-bold text-green-800">Panadería</p>
-                      <p className="text-sm line-through">$3.99</p>
-                      <p className="text-lg font-bold text-red-600">$2.79</p>
+                      <p className="font-bold text-white">CERVEZA PILSEN LATONES</p>
+                      <p className="text-xl line-through text-white">s/ 35</p>
+                      <p className="text-3xl font-bold text-red-600">s/ 32</p>
                     </div>
                   </div>
-                  <div className="bg-green-100 p-3 rounded-lg flex items-center">
-                    <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&q=80&w=100&h=100" 
-                      alt="Manzanas" className="w-16 h-16 object-cover rounded mr-3" />
+                  <div className="bg-black p-3 rounded-lg flex items-center">
+                    <img src="https://mcusercontent.com/17635adc15e4488859eb5650d/images/96a8b839-d758-5db7-0b2a-89cb2b1f7b2d.jpeg" 
+                      alt="Manzanas" className="w-full h-40 object-cover rounded mr-3" />
                     <div className="text-left">
-                      <p className="font-bold text-green-800">Frutas</p>
-                      <p className="text-sm line-through">$2.99</p>
-                      <p className="text-lg font-bold text-red-600">$2.09</p>
+                      <p className="font-bold text-white">CERVEZA CRISTAL BOTELLITA</p>
+                      <p className="text-xl line-through text-white">s/ 35</p>
+                      <p className="text-3xl font-bold text-red-600">s/ 31</p>
                     </div>
                   </div>
                 </div>
@@ -204,7 +205,7 @@ function App() {
       </div>
 
       {/* Search Section with Background */}
-      <div className="bg-gradient-to-r from-green-100 to-green-200 py-6 shadow-inner">
+      <div className="bg-gradient-to-t from-red-800 to-red-600 py-6 shadow-inner">
         <div className="container mx-auto px-4">
           <div className="relative max-w-md mx-auto">
             <input
@@ -231,7 +232,7 @@ function App() {
                 key={category}
                 className={`px-4 py-2 rounded-full ${
                   selectedCategory === category
-                    ? 'bg-green-600 text-white'
+                    ? 'bg-black text-white'
                     : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
                 }`}
                 onClick={() => setSelectedCategory(category)}
@@ -267,13 +268,13 @@ function App() {
                     />
                     <div className="p-4">
                       <h3 className="font-semibold text-lg mb-1">{product.name}</h3>
-                      <p className="text-green-600 font-bold mb-2">${product.price.toFixed(2)}</p>
+                      <p className="text-red-600 font-bold mb-2">${product.price.toFixed(2)}</p>
                       <p className="text-sm text-gray-600 mb-3">{product.category}</p>
                       <button
                         className={`w-full py-2 rounded transition-all transform duration-300 ${
                           clickedButtons[product.id]
-                            ? 'bg-green-800 text-white scale-95 shadow-inner'
-                            : 'bg-green-600 text-white hover:bg-green-700'
+                            ? 'bg-black text-white scale-95 shadow-inner'
+                            : 'bg-black text-white hover:bg-red-700 border '
                         }`}
                         onClick={() => addToCart(product)}
                       >
@@ -309,7 +310,7 @@ function App() {
                             onClick={() => paginate(number)}
                             className={`w-10 h-10 rounded-full ${
                               currentPage === number
-                                ? 'bg-green-600 text-white'
+                                ? 'bg-black text-white'
                                 : 'bg-gray-200 text-gray-800 hover:bg-gray-300'
                             }`}
                           >
