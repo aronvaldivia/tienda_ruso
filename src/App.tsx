@@ -17,10 +17,10 @@ interface CartItem extends Product {
 function App() {
   // Sample product data for a food/grocery store
   const [products, setProducts] = useState<Product[]>([
-    { id: 1, name: 'Manzanas Rojas (1kg)', price: 2.99, category: 'Frutas', image: 'https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&q=80&w=200&h=200' },
-    { id: 2, name: 'Plátanos (1kg)', price: 1.99, category: 'Frutas', image: 'https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?auto=format&fit=crop&q=80&w=200&h=200' },
-    { id: 3, name: 'Leche Entera (1L)', price: 1.49, category: 'Lácteos', image: 'https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&q=80&w=200&h=200' },
-    { id: 4, name: 'Queso Fresco (250g)', price: 3.99, category: 'Lácteos', image: 'https://images.unsplash.com/photo-1486297678162-eb2a19b0a32d?auto=format&fit=crop&q=80&w=200&h=200' },
+    { id: 1, name: 'Dorito Queso Fuego (190g)', price: 3.50, category: 'Snak', image: 'https://mcusercontent.com/17635adc15e4488859eb5650d/images/9afb4f3a-35b3-1c4a-9c58-2f5cf709b427.png' },
+    { id: 2, name: 'Dorito Queso Atrevido (45g)', price: 2.00, category: 'Snak', image: 'https://mcusercontent.com/17635adc15e4488859eb5650d/images/0dd866fa-cfcf-88e1-c6a6-bbf42e894eac.png' },
+    { id: 3, name: 'Dorito Flaming Hot (100g)', price: 3.00, category: 'Snak', image: 'https://mcusercontent.com/17635adc15e4488859eb5650d/images/b503ea53-e471-0b6a-dc54-57dad8bcb425.png' },
+    { id: 4, name: 'Chesse tris Queso (42g)', price: 2.00, category: 'Snak', image: 'https://mcusercontent.com/17635adc15e4488859eb5650d/images/34592aba-64ae-fb82-3921-0e35312e99e4.png' },
     { id: 5, name: 'Pan Integral', price: 2.49, category: 'Panadería', image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=200&h=200' },
     { id: 6, name: 'Donas Glaseadas (4 uds)', price: 3.99, category: 'Panadería', image: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&q=80&w=200&h=200' },
     { id: 7, name: 'Chocolate con Leche', price: 2.29, category: 'Golosinas', image: 'https://images.unsplash.com/photo-1511381939415-e44015466834?auto=format&fit=crop&q=80&w=200&h=200' },
@@ -35,6 +35,7 @@ function App() {
     { id: 16, name: 'Pasta Espagueti (500g)', price: 1.79, category: 'Abarrotes', image: 'https://images.unsplash.com/photo-1551462147-ff29053bfc14?auto=format&fit=crop&q=80&w=200&h=200' },
     { id: 17, name: 'Galletas Chocolate (250g)', price: 2.49, category: 'Golosinas', image: 'https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&q=80&w=200&h=200' },
     { id: 18, name: 'Cereal de Maíz (400g)', price: 3.99, category: 'Desayuno', image: 'https://images.unsplash.com/photo-1521483451569-e33803c0330c?auto=format&fit=crop&q=80&w=200&h=200' },
+    { id: 19, name: 'Manzanas Rojas (1kg)', price: 2.99, category: 'Frutas', image: 'https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&q=80&w=200&h=200' },
   ]);
 
   const [searchTerm, setSearchTerm] = useState('');
@@ -144,8 +145,8 @@ function App() {
 
     const phoneNumber = "962231332"; // Replace with the store's WhatsApp number
     const message = `Nueva orden:\n\n${cart.map(item => 
-      `${item.name} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`
-    ).join('\n')}\n\nTotal: $${totalPrice.toFixed(2)}`;
+      `${item.name} x${item.quantity} - s/${(item.price * item.quantity).toFixed(2)}`
+    ).join('\n')}\n\nTotal: s/${totalPrice.toFixed(2)}`;
 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
@@ -264,11 +265,11 @@ function App() {
                     <img 
                       src={product.image} 
                       alt={product.name} 
-                      className="w-full h-48 object-cover"
+                      className="w-full h-48 object-contain"
                     />
                     <div className="p-4">
                       <h3 className="font-semibold text-lg mb-1">{product.name}</h3>
-                      <p className="text-red-600 font-bold mb-2">${product.price.toFixed(2)}</p>
+                      <p className="text-red-600 font-bold mb-2">s/{product.price.toFixed(2)}</p>
                       <p className="text-sm text-gray-600 mb-3">{product.category}</p>
                       <button
                         className={`w-full py-2 rounded transition-all transform duration-300 ${
