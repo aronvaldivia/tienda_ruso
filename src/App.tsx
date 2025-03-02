@@ -142,7 +142,7 @@ function App() {
   const sendOrderViaWhatsApp = () => {
     if (cart.length === 0) return;
 
-    const phoneNumber = "1234567890"; // Replace with the store's WhatsApp number
+    const phoneNumber = "962231332"; // Replace with the store's WhatsApp number
     const message = `Nueva orden:\n\n${cart.map(item => 
       `${item.name} x${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`
     ).join('\n')}\n\nTotal: $${totalPrice.toFixed(2)}`;
